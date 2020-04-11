@@ -46,7 +46,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         if task_params[:completed]
-          Account.find_by_id(current_account).increment!(:experience_points, 100)
+          Account.find_by_id(current_account).increment!(:experience_points, 10)
         end
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
