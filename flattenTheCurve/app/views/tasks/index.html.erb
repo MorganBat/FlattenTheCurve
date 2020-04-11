@@ -5,7 +5,10 @@
 <%= link_to  "Sign out", destroy_account_session_path, method: :delete %>
 
 
-<h1>Tasks</h1>
+<div class="experience-count">
+  <span>Your current XP: <%= @user.experience_points %> </span> 
+</div>
+
 
 <table>
   <thead>

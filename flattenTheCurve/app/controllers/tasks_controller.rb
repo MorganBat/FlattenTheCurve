@@ -6,6 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.where(account_id: current_account)
+    @user = Account.find_by_id(current_account)
   end 
 
   # GET /tasks/1
@@ -44,6 +45,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+        # Account.find_by_id(current_account).experience_points += 100
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
