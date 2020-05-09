@@ -1,0 +1,4 @@
+Our Solution is a goal setting/task management website which has various methods of encouragement. 
+Physical rewards such as discounts or free services, gamification of task tracking, 
+social media encouragement for accountability and possibly financial disincentive 
+in the form of a small charitable donation if goals aren’t met.

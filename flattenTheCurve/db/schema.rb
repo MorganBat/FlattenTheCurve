@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_061353) do
+ActiveRecord::Schema.define(version: 2020_04_11_061026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2020_04_11_061353) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "experience_points", default: 0
+    t.string "username"
+    t.datetime "date_format"
+    t.datetime "custom_date_start"
+    t.string "time_zone"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
@@ -35,19 +39,9 @@ ActiveRecord::Schema.define(version: 2020_04_11_061353) do
     t.string "description"
     t.integer "priority"
     t.boolean "completed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "account_id"
-    t.index ["account_id"], name: "index_tasks_on_account_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "experience_points", default: 0
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
